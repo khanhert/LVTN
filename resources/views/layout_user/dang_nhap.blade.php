@@ -1,6 +1,6 @@
 @extends('master_user')
 @section('title','Đăng nhập');
-@section('login')
+@section('dangnhap')
 @include('layout_user.header')
 <section id="form"><!--form-->
     <div class="container">
@@ -17,7 +17,7 @@
                         </span>
                         <button type="submit" class="btn btn-default">Login</button>
                         <br>
-                        <a href="#" style="background:#dd4b39 ;color:white " class="google btn"><i class="fa fa-google fa-fw">
+                        <a href="{{url('khach_hang/login')}}" style="background:#dd4b39 ;color:white " class="google btn"><i class="fa fa-google fa-fw">
                         </i> Login with Google+
                       </a>
                       <a href="#" style="background:#3B5998 ;color:white " class="google btn"><i class="fa fa-google fa-fw">

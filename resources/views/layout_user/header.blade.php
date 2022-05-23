@@ -39,7 +39,7 @@
                             <li><a href=""><i class="fa fa-user"></i> Tài Khoản</a></li>
                             <li><a href="{{url('gio_hang/thong_tin_gio_hang')}}"><i class="fa fa-shopping-cart"></i> @php echo "[" .Cart::content()->count(). "]" @endphp Giỏ Hàng</a></li>
                             <li><a href="login.html"><i class="fa fa-list"></i> Tin tức</a></li>
-                            <li><a href="login.html"><i class="fa fa-lock"></i> Đăng nhập</a></li>
+                            <li><a href="{{url('/khach_hang')}}"><i class="fa fa-lock"></i> Đăng nhập</a></li>
                         </ul>
                     </div>
                 </div>

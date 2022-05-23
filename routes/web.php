@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GioHangController;
+use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\SanPhamController;
 use App\Http\Controllers\TestLayout;
@@ -31,4 +32,9 @@ Route::prefix('/gio_hang')->group(function(){
     Route::post('them_vao_gio_hang/{masp}',[GioHangController::class,'themvaoGioHang']);
     Route::post('cap_nhat_gio_hang', [GioHangController::class, 'CapNhatGioHang']);
     Route::get('xoa_mat_hang/{masp}', [GioHangController::class, 'XoaMatHang']);
+});
+Route::prefix('/khach_hang')->group(function(){
+    Route::get('/',[KhachHangController::class,'index']);
+    Route::get('login', [KhachHangController::class, 'loginGoogle']);
+    Route::any('/callback', [KhachHangController::class, 'callbackGoogle']);
 });

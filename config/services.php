@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'google' => [
+        'client_id' => '852093035214-pccoogbs4ptobv4l24ipia5st6sikut8.apps.googleusercontent.com',
+        'client_secret' => 'n9oEdznV8NNhwiTM1eB8Nctq',
+        'redirect' => 'http://localhost/TheThaoNK/khach_hang/callback',
+    ],
 ];

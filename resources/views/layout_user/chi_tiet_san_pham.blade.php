@@ -81,8 +81,8 @@
                                 </span>
                                 <span>
                                     <label>Số Lượng:</label>
-                                    <input type="text" value="3" />
-                                    <button type="button" class="btn btn-fefault cart">
+                                    <input  id="SoLuong" type="number" value="3" />
+                                    <button name="{{$masp->masp}}" id="btnThemVaoGioHang" type="button" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         + Giỏ Hàng
                                     </button>
@@ -149,7 +149,7 @@
                                             <input type="text" placeholder="Your Name" />
                                             <input type="email" placeholder="Email Address" />
                                         </span>
-                                        <textarea id="editor" name=""></textarea>
+                                        
 
                                         <button type="button" class="btn btn-default pull-right">
                                             Gửi
@@ -176,15 +176,45 @@
     @include('layout_user.footer')
 
 @endsection
+
 @section('script')
     <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
+        $("*[id^=btnThemVaoGioHang]").click(function() {
+            var id = $(this).attr('name');
+            var SoLuong = $("#SoLuong").val();
+
+            if (SoLuong <= 0) {
+                alert('Vui lòng chọn Số lượng >0');
+                return false;
+            }
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: '{{ url('gio_hang/them_vao_gio_hang/') }}/' + id,
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "id": id,
+                    SoLuong:SoLuong
+                },
+                success: function(data) {
+                    if (data.n == 0)
+                    
+                        alert('Thêm vào giỏ hàng không thành công');
+                    else {
+                        
+                        alert('Thêm vào giỏ hàng thành công');
+                    }
+
+                },
+                error: function(xhr, status, error) {
+                    alert(error);
+                }
             });
+            return false;
+        });
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover();
+        });
     </script>
 @endsection

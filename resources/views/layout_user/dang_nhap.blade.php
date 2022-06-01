@@ -8,9 +8,10 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="login-form"><!--login form-->
                     <h2>Đăng Nhập</h2>
-                    <form action="#">
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
+                    <form action="{{url('khach_hang/dang_nhap')}}" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                        <input name="email" type="email" placeholder="Email" />
+                        <input name="password" type="password" placeholder="Password" />
                         <span>
                             <input type="checkbox" class="checkbox"> 
                             Lưu Đăng Nhập

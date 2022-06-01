@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
+ 
     <title>@yield('title')</title>
     <link href="{{ URL::asset('resources/css_js_images_master_user/')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ URL::asset('resources/css_js_images_master_user/')}}/css/font-awesome.min.css" rel="stylesheet">
@@ -25,6 +25,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 </head><!--/head-->
 @yield('index')
 @yield('chitiet')
@@ -33,6 +34,7 @@
 @yield('dangnhap')
 @yield('dangky')
 <body>
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
     <script src="{{ URL::asset('resources/css_js_images_master_user/')}}/js/jquery.js"></script>
 	<script src="{{ URL::asset('resources/css_js_images_master_user/')}}/js/bootstrap.min.js"></script>

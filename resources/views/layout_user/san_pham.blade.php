@@ -74,9 +74,11 @@
                 success: function(data) {
                     if (data.n == 0)
                         alert('Thêm vào giỏ hàng không thành công');
+                        
                     else {
                         
                         alert('Thêm vào giỏ hàng thành công');
+                       
                     }
 
                 },
